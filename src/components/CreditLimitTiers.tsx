@@ -112,6 +112,7 @@ const CreditLimitTiers = () => {
                 <li className="flex items-center gap-2">
                   <CheckCheck size={18} className="text-[#16A34A]" />
                   Limited borrowing capacity
+                  
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCheck size={18} className="text-[#16A34A]" />
