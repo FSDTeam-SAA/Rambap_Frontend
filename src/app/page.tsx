@@ -8,11 +8,15 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <IndustrySolutions />
-      <CreditLimitTiers />
       <div className="bg-[#F9FAFB]">
-      <HowItWorks />
-      <CTA />
+        <IndustrySolutions />
+      </div>
+     <div className="bg-white">
+      <CreditLimitTiers />
+     </div>
+      <div className="bg-[#F9FAFB]">
+        <HowItWorks />
+        <CTA />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Logo from '../public/footer.jpg'
+import { Mail, MapPin, Phone } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-[#4B1E2F] text-primary-foreground py-12">
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="rounded-lg">
-              <Image src={Logo} width={100} className="rounded-xl" height={100} alt="rambap"/>
+              <Image src={Logo} width={100} className="rounded-xl" height={100} alt="rambap" />
             </div>
             <p className="text-sm opacity-90">
               Revolutionizing lending solutions with innovative financial products designed for your success.
@@ -49,15 +50,15 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact Info</h4>
             <div className="space-y-3 text-sm opacity-90">
               <div className="flex items-center space-x-2">
-                <span>📍</span>
+                <span><MapPin size={16} /></span>
                 <span>123 Business Street, Suite 100</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span>📞</span>
+                <span><Phone size={16} /></span>
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span>✉️</span>
+                <span><Mail size={16} /></span>
                 <span>info@creditprime.com</span>
               </div>
             </div>
