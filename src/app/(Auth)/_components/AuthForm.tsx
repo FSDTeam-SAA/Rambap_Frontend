@@ -8,14 +8,13 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 
-// type of each field
 type Field = {
   name: string
   label: string
   type?: string
+  placeholder?: string
 }
 
-// Props for the reusable form
 interface AuthFormProps {
   title: string
   fields: Field[]
@@ -62,16 +61,19 @@ export default function AuthForm({
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* Render dynamic fields */}
         {fields.map((field) => (
           <div key={field.name} className="flex flex-col space-y-1">
             <Label htmlFor={field.name}>{field.label}</Label>
+
             <Input
               id={field.name}
               type={field.type || 'text'}
+              placeholder={field.placeholder || `Enter your ${field.label}`}
+              className="border rounded-md px-3 py-2 placeholder:text-[#BDBDBD] placeholder:text-[14px] placeholder:font-book placeholder:leading-[120%]"
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               {...register(field.name as any)}
             />
+
             {errors[field.name] && (
               <span className="text-sm text-red-500">
                 {errors[field.name]?.message as string}
@@ -80,11 +82,13 @@ export default function AuthForm({
           </div>
         ))}
 
-        {/* Extra custom content before button */}
+        {/* Extra children (checkbox / terms) */}
         {children && <div>{children}</div>}
 
-        {/* Submit button */}
-        <Button type="submit" className="w-full bg-[#4B1E2F]">
+        <Button
+          type="submit"
+          className="w-full bg-[#4B1E2F] hover:bg-[#692e45]"
+        >
           {submitText}
         </Button>
       </form>

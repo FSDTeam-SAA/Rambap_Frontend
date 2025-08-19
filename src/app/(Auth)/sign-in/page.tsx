@@ -29,7 +29,7 @@ export default function SignInPage() {
           </label>
           <Link
             href="/reset-password"
-            className="text-[#4B1E2F] hover:underline"
+            className="text-[#E0AB0B] hover:underline"
           >
             Forgot password?
           </Link>
@@ -37,7 +37,7 @@ export default function SignInPage() {
       </AuthForm>
 
       {/* Below button */}
-      <p className="text-center text-sm">
+      <p className="text-center text-sm text-gray-800">
         New to our platform?{' '}
         <Link
           href="/signup"

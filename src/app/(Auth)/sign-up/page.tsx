@@ -30,7 +30,7 @@ export default function SignUpPage() {
         {/* Terms & Privacy (inside form, above button) */}
         <div className="flex items-start space-x-2 text-sm">
           <Checkbox id="terms" />
-          <label htmlFor="terms" className="leading-snug text-gray-600">
+          <label htmlFor="terms" className="leading-snug text-gray-800">
             I agree to the{' '}
             <Link
               href="/privacy-policy"

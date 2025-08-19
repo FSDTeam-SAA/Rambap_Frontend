@@ -9,19 +9,10 @@ export default function ResetPasswordPage() {
 
   return (
     <AuthForm
-      title="Reset Password"
-      submitText="Reset"
+      title="Forgot Password"
+      submitText="Send OTP"
       onSubmit={handleReset}
-      fields={[
-        { name: 'email', label: 'Email', type: 'email' },
-        { name: 'code', label: 'Verification Code' },
-        { name: 'password', label: 'New Password', type: 'password' },
-        {
-          name: 'confirmPassword',
-          label: 'Confirm Password',
-          type: 'password',
-        },
-      ]}
+      fields={[{ name: 'email', label: 'Email', type: 'email' }]}
     />
   )
 }
