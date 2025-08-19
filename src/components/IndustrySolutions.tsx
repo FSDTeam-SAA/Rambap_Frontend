@@ -45,7 +45,11 @@ const IndustrySolutions = () => {
           {solutions.map((solution, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow bg-white border border-gray-200">
               <CardHeader>
-                <div className="text-3xl mb-2">{solution.icon}</div>
+                <div className=" mb-2 text-[#4B1E2F] flex">
+                  <div className="bg-[#4B1E2F1A] p-3 rounded-lg">
+                  {solution.icon}
+                  </div>
+                  </div>
                 <CardTitle className="text-xl text-gray-900">{solution.title}</CardTitle>
               </CardHeader>
               <CardContent>
