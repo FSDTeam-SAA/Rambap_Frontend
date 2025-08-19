@@ -1,0 +1,93 @@
+'use client'
+
+import React, { ReactNode } from 'react'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+
+// type of each field
+type Field = {
+  name: string
+  label: string
+  type?: string
+}
+
+// Props for the reusable form
+interface AuthFormProps {
+  title: string
+  fields: Field[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onSubmit: (data: any) => void
+  submitText: string
+  children?: ReactNode
+}
+
+export default function AuthForm({
+  title,
+  fields,
+  onSubmit,
+  submitText,
+  children,
+}: AuthFormProps) {
+  const schema = z.object(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fields.reduce((acc: any, field) => {
+      if (field.name === 'email') {
+        acc[field.name] = z.string().email({ message: 'Invalid email' })
+      } else if (field.name.toLowerCase().includes('password')) {
+        acc[field.name] = z
+          .string()
+          .min(6, { message: 'Password must be at least 6 characters' })
+      } else {
+        acc[field.name] = z.string().min(1, { message: 'Required' })
+      }
+      return acc
+    }, {})
+  )
+
+  type FormData = z.infer<typeof schema>
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({ resolver: zodResolver(schema) })
+
+  return (
+    <div className="space-y-[30px]">
+      <h2 className="text-2xl md:text-[32px] font-medium mb-4 text-center p-8 leading-[120%] text-[#4B1E2F]">
+        {title}
+      </h2>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        {/* Render dynamic fields */}
+        {fields.map((field) => (
+          <div key={field.name} className="flex flex-col space-y-1">
+            <Label htmlFor={field.name}>{field.label}</Label>
+            <Input
+              id={field.name}
+              type={field.type || 'text'}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              {...register(field.name as any)}
+            />
+            {errors[field.name] && (
+              <span className="text-sm text-red-500">
+                {errors[field.name]?.message as string}
+              </span>
+            )}
+          </div>
+        ))}
+
+        {/* Extra custom content before button */}
+        {children && <div>{children}</div>}
+
+        {/* Submit button */}
+        <Button type="submit" className="w-full bg-[#4B1E2F]">
+          {submitText}
+        </Button>
+      </form>
+    </div>
+  )
+}
