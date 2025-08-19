@@ -36,7 +36,9 @@ export default function OtpInput({ length = 6, onChange }: OtpInputProps) {
       {Array.from({ length }).map((_, idx) => (
         <input
           key={idx}
-          ref={(el) => (inputsRef.current[idx] = el)}
+          ref={(el) => {
+            inputsRef.current[idx] = el
+          }}
           type="text"
           maxLength={1}
           onChange={(e) => handleInput(e, idx)}
