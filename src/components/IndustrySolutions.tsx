@@ -1,49 +1,46 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Calculator, Calendar, Database, Leaf, Wallet } from "lucide-react";
+import { Button } from "./ui/button";
 
 const IndustrySolutions = () => {
   const solutions = [
     {
-      icon: "🏠",
-      title: "Real Estate & Construction",
-      description: "Comprehensive financing solutions for property development and construction projects with competitive rates."
+      icon: <Calculator />,
+      title: "Building & Construction",
+      description: "Specialized financing solutions for construction projects, equipment purchase, and property development with flexible terms tailored to project timelines."
     },
     {
-      icon: "🏭",
-      title: "SME Finance",
-      description: "Tailored financial products for small and medium enterprises to fuel growth and expansion."
+      icon: <Wallet />,
+      title: "DeFi & Fintech",
+      description: "Cutting-edge decentralized finance solutions combining traditional lending models with blockchain technology for faster, more secure transactions."
     },
     {
-      icon: "🎓",
-      title: "Education",
-      description: "Educational loan programs designed to make quality education accessible and affordable."
+      icon: <Leaf />,
+      title: "Agriculture",
+      description: "Customized financing for farmers and agribusinesses, considering seasonal cash flows and providing loans for equipment, landacquisition, and operational costs."
     },
     {
-      icon: "🌟",
-      title: "Premium",
-      description: "Exclusive premium services for high-net-worth individuals with personalized financial advisory."
+      icon: <Calendar />,
+      title: "Event & Entertainment",
+      description: "Short-term financing solutions for event organizers and entertainment companies, with quick approval processes and specialized risk assessment models."
     },
     {
-      icon: "💼",
-      title: "MSME & Commercial",
-      description: "Micro, small, and medium enterprise financing with flexible terms and quick approvals."
+      icon: <Database />,
+      title: "Data & Technology",
+      description: "Innovative financing for tech startups and data-driven companies, with IP-backed loan options and growth-focused lending solutions for scaling operations."
     },
-    {
-      icon: "⚡",
-      title: "Fintech & Technology",
-      description: "Innovative fintech solutions leveraging cutting-edge technology for seamless financial services."
-    }
   ];
 
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Industry Solutions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold  text-[#4B1E2F] mb-[24px]">Our Industry Solutions</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We provide comprehensive lending solutions across diverse industries, ensuring customized financial products that meet your specific sector needs.
+            We provide specialized lending solutions across multiple industries, tailored to meet the unique needs of each sector
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {solutions.map((solution, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow bg-white border border-gray-200">
@@ -56,6 +53,20 @@ const IndustrySolutions = () => {
               </CardContent>
             </Card>
           ))}
+          <Card className="hover:shadow-lg transition-shadow bg-[#4B1E2F] border border-gray-200">
+            <CardHeader>
+              <div className="text-[20px] font-medium  text-white mb-2 ">Need a Custom Solution?</div>
+              <CardTitle className="text-[16px] font-normal text-[#EDE9EA]">Don&apos;t see your industry? We offer customized lending solutions tailored to your specific business needs.</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Button
+                size="lg"
+                className="bg-[#DBCBB9] text-[#4B1E2F] hover:bg-gray-100"
+              >
+                Get Started Today <ArrowRight />
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
         {/* <div className="bg-[#4B1E2F] text-white rounded-lg p-8 text-center">
