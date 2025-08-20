@@ -5,11 +5,15 @@
 import Link from 'next/link'
 import { Checkbox } from '@/components/ui/checkbox'
 import AuthForm from '../../_components/AuthForm'
+import { useRouter } from 'next/navigation'
 
 export default function SignUpPage() {
+    const router = useRouter()
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleSignUp = (data: any) => {
         console.log('Sign Up Data:', data)
+        router.push("/complete-profile")
+
     }
 
     return (
