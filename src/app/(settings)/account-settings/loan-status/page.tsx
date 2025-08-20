@@ -3,7 +3,7 @@ import LoanStatusPage from '../_components/LoanStatusPage'
 
 const LoanStatus = () => {
   return (
-    <div>
+    <div className="pt-10 lg:pt-0">
       <LoanStatusPage />
     </div>
   )

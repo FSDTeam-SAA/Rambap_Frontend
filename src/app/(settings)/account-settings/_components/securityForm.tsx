@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
-import { Eye, EyeOff } from 'lucide-react'
+import { Eye, EyeClosed } from 'lucide-react'
 
 const schema = z
   .object({
@@ -79,7 +79,11 @@ export default function SecurityForm() {
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
               onClick={() => toggleEye('current')}
             >
-              {showPassword.current ? <EyeOff size={20} /> : <Eye size={20} />}
+              {showPassword.current ? (
+                <EyeClosed size={20} />
+              ) : (
+                <Eye size={20} />
+              )}
             </span>
           </div>
         </div>
@@ -101,7 +105,7 @@ export default function SecurityForm() {
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
               onClick={() => toggleEye('new')}
             >
-              {showPassword.new ? <EyeOff size={20} /> : <Eye size={20} />}
+              {showPassword.new ? <EyeClosed size={20} /> : <Eye size={20} />}
             </span>
           </div>
         </div>
@@ -123,7 +127,11 @@ export default function SecurityForm() {
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
               onClick={() => toggleEye('confirm')}
             >
-              {showPassword.confirm ? <EyeOff size={20} /> : <Eye size={20} />}
+              {showPassword.confirm ? (
+                <EyeClosed size={20} />
+              ) : (
+                <Eye size={20} />
+              )}
             </span>
           </div>
         </div>
