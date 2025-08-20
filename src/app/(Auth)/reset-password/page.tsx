@@ -1,18 +1,12 @@
-'use client'
-import AuthForm from '../_components/AuthForm'
+import React from 'react'
+import ResetPasswordPage from './_components/ResetPasswordComponent'
 
-export default function ResetPasswordPage() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleReset = (data: any) => {
-    console.log('Reset Password Data:', data)
-  }
-
+const page = () => {
   return (
-    <AuthForm
-      title="Forgot Password"
-      submitText="Send OTP"
-      onSubmit={handleReset}
-      fields={[{ name: 'email', label: 'Email', type: 'email' }]}
-    />
+    <div className='border py-10 flex items-center justify-center'>
+      <ResetPasswordPage />
+    </div>
   )
 }
+
+export default page

@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Logo from "../public/Logo.png";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -17,12 +16,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeIn" }}
-      className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-500 ${scrolled ? "bg-white/90 shadow-md py-2" : "bg-transparent py-4"
-        }`}
+    <nav
+      className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-500 ${
+        scrolled ? "bg-white/90 shadow-md py-2" : "bg-transparent py-4"
+      }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
@@ -57,7 +54,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
