@@ -44,6 +44,7 @@ export default function SignUpPage() {
             </Link>
           </label>
         </div>
+        
       </AuthForm>
 
       {/* Below button */}

@@ -55,12 +55,12 @@ export default function AuthForm({
   } = useForm<FormData>({ resolver: zodResolver(schema) })
 
   return (
-    <div className="space-y-[30px]">
+    <div className="space-y-[30px] ">
       <h2 className="text-2xl md:text-[32px] font-medium mb-4 text-center p-8 leading-[120%] text-[#4B1E2F]">
         {title}
       </h2>
-
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <div className='flex items-center   justify-center'>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 ">
         {fields.map((field) => (
           <div key={field.name} className="flex flex-col space-y-1">
             <Label htmlFor={field.name}>{field.label}</Label>
@@ -92,6 +92,8 @@ export default function AuthForm({
           {submitText}
         </Button>
       </form>
+      </div>
+
     </div>
   )
 }
