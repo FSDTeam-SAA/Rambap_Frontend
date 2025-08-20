@@ -33,10 +33,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TanstackProviders>
-          <Navbar/>
-        {children}
-        <Footer/>
-        <Toaster/>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster />
         </TanstackProviders>
       </body>
     </html>

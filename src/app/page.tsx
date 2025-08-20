@@ -11,9 +11,9 @@ export default function Home() {
       <div className="bg-[#F9FAFB]">
         <IndustrySolutions />
       </div>
-     <div className="bg-white">
-      <CreditLimitTiers />
-     </div>
+      <div className="bg-white">
+        <CreditLimitTiers />
+      </div>
       <div className="bg-[#F9FAFB]">
         <HowItWorks />
         <CTA />
