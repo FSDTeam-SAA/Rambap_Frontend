@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { AccountHeader } from './_components/AccountHeader'
 import { User, Lock, FileText, LogOut } from 'lucide-react'
+import userImage from '../../../public/images/user.jpg'
 
 export default function AccountSettingsLayout({
   children,
@@ -28,7 +29,7 @@ export default function AccountSettingsLayout({
             {/* User Info */}
             <div className="flex items-center gap-4 px-6 pb-6 border-b">
               <Image
-                src="/user.jpg"
+                src={userImage}
                 alt="User Avatar"
                 width={64}
                 height={64}
@@ -60,9 +61,9 @@ export default function AccountSettingsLayout({
                 </li>
                 <li>
                   <Link
-                    href="/account-settings/settings"
+                    href="/account-settings/security"
                     className={`flex items-center gap-3 px-3 py-2 rounded font-[Gotham] font-medium text-[16px] leading-[120%] ${
-                      isActive('/account-settings/settings')
+                      isActive('/account-settings/security')
                         ? 'bg-[#4B1E2F1A] text-[#4B1E2F]'
                         : 'text-[#282828] hover:bg-[#4B1E2F1A]'
                     }`}
@@ -73,9 +74,9 @@ export default function AccountSettingsLayout({
                 </li>
                 <li>
                   <Link
-                    href="/account-settings/status"
+                    href="/account-settings/loan-status"
                     className={`flex items-center gap-3 px-3 py-2 rounded font-[Gotham] font-medium text-[16px] leading-[120%] ${
-                      isActive('/account-settings/status')
+                      isActive('/account-settings/loan-status')
                         ? 'bg-[#4B1E2F1A] text-[#4B1E2F]'
                         : 'text-[#282828] hover:bg-[#4B1E2F1A]'
                     }`}
