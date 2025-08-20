@@ -19,39 +19,53 @@ export default function LoanStatusPage() {
   const [status, setStatus] = useState<LoanStatusType>('loading')
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-50 space-y-10">
+    <div className="flex flex-col items-center justify-center bg-gray-50 px-4 space-y-10 ">
       {/* Loading State */}
       {status === 'loading' && (
-        <div className="flex flex-col items-center text-center space-y-4">
-          <h2 className="text-xl font-semibold text-[#282828]">
+        <div className="flex flex-col items-center text-center space-y-4 max-w-full">
+          <h2 className="text-2xl md:text-3xl lg:text-[32px] leading-snug font-semibold text-[#282828]">
             Your loan has not yet been approved.
           </h2>
-          <p className="text-gray-600">Please wait for further updates.</p>
-          <Image src={loadingLoan} alt="Loading" width={150} height={150} />
+
+          <div className="w-full max-w-md md:max-w-lg">
+            <Image
+              src={loadingLoan}
+              alt="Loading"
+              width={465}
+              height={477}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       )}
 
       {/* Rejected State */}
       {status === 'rejected' && (
-        <div className="flex flex-col items-center text-center space-y-4">
-          <h2 className="text-xl font-semibold text-[#282828]">
+        <div className="flex flex-col items-center text-center space-y-4 max-w-full">
+          <h2 className="text-2xl md:text-3xl lg:text-[32px] leading-snug font-semibold text-[#282828]">
             We’re sorry, your loan was not approved at this time.
           </h2>
-          <p className="text-gray-600">
-            Please try again later or contact support for more details.
-          </p>
-          <Image src={rejectedLoan} alt="Rejected" width={150} height={150} />
+
+          <div className="w-full max-w-xs md:max-w-sm">
+            <Image
+              src={rejectedLoan}
+              alt="Rejected"
+              width={335}
+              height={355}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       )}
 
       {/* Approved State */}
       {status === 'approved' && (
-        <div className="flex flex-col items-center text-center space-y-6">
-          <h2 className="text-xl font-semibold text-[#282828]">
+        <div className="flex flex-col items-center text-center space-y-6 w-full max-w-md md:max-w-lg">
+          <h2 className="text-xl md:text-2xl font-semibold text-[#282828]">
             Congratulations! Your loan is approved.
           </h2>
 
-          <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-sm space-y-4">
+          <div className="bg-white shadow-md rounded-lg p-6 w-full space-y-4">
             <div className="flex justify-between">
               <span className="font-medium text-gray-700">Loan Amount</span>
               <span className="font-semibold text-[#4B1E2F]">
@@ -79,10 +93,25 @@ export default function LoanStatusPage() {
       )}
 
       {/* Buttons to quickly switch states for testing */}
-      <div className="flex gap-4">
-        <Button onClick={() => setStatus('loading')}>Set Loading</Button>
-        <Button onClick={() => setStatus('approved')}>Set Approved</Button>
-        <Button onClick={() => setStatus('rejected')}>Set Rejected</Button>
+      <div className="flex flex-col md:flex-row justify-center gap-4 w-full max-w-md ">
+        <Button
+          className="w-full sm:w-auto"
+          onClick={() => setStatus('loading')}
+        >
+          Set Loading
+        </Button>
+        <Button
+          className="w-full sm:w-auto"
+          onClick={() => setStatus('approved')}
+        >
+          Set Approved
+        </Button>
+        <Button
+          className="w-full sm:w-auto"
+          onClick={() => setStatus('rejected')}
+        >
+          Set Rejected
+        </Button>
       </div>
     </div>
   )

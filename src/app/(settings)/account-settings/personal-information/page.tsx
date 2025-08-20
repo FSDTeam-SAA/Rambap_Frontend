@@ -3,7 +3,7 @@ import PersonalInformationPage from '../_components/informatinPage'
 
 const PersonalInformation = () => {
   return (
-    <div>
+    <div className="pt-10 lg:pt-0">
       <PersonalInformationPage />
     </div>
   )

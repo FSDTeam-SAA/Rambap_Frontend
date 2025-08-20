@@ -3,7 +3,7 @@ import SecurityForm from '../_components/securityForm'
 
 const SettignsPage = () => {
   return (
-    <div>
+    <div className="pt-10 lg:pt-0">
       <SecurityForm />
     </div>
   )

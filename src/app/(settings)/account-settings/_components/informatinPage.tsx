@@ -40,7 +40,7 @@ export default function PersonalInformationPage() {
 
   const onSubmit = (data: FormData) => {
     console.log('Form Submitted:', data)
-    setEditable(false) // Optional: disable after updating
+    setEditable(false)
   }
 
   const labelClass =
@@ -49,16 +49,16 @@ export default function PersonalInformationPage() {
     'font-gotham font-medium text-[16px] leading-[120%] placeholder-gray-400'
 
   return (
-    <div className="bg-white shadow-sm rounded-lg pb-5">
-      <div className="flex items-center justify-between mb-6 py-6 bg-[#E5E7EB] px-8">
-        <h2 className="text-xl font-semibold text-[#282828]">
+    <div className="bg-white shadow-sm rounded-lg pb-5 ">
+      <div className="flex flex-col md:flex-row items-center justify-between mb-6 py-6 bg-[#E5E7EB] px-6 md:px-8">
+        <h2 className="text-xl font-semibold text-[#282828] mb-3 md:mb-0">
           Personal Information
         </h2>
         <Button
           type="button"
           className="bg-[#4B1E2F] hover:bg-[#3A1624]"
           onClick={() => setEditable(true)}
-          disabled={editable} // Disable Update Profile when editing
+          disabled={editable}
         >
           Update Profile
         </Button>
@@ -69,8 +69,7 @@ export default function PersonalInformationPage() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-6 px-3 md:px-6 lg:px-8"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* First & Last Name */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div>
             <Label htmlFor="firstName" className={labelClass}>
               First Name
@@ -93,8 +92,6 @@ export default function PersonalInformationPage() {
               disabled={!editable}
             />
           </div>
-
-          {/* Email & Phone */}
           <div>
             <Label htmlFor="email" className={labelClass}>
               Email Address
@@ -119,7 +116,6 @@ export default function PersonalInformationPage() {
             />
           </div>
 
-          {/* Street */}
           <div className="md:col-span-2">
             <Label htmlFor="street" className={labelClass}>
               Street Address
@@ -132,8 +128,7 @@ export default function PersonalInformationPage() {
             />
           </div>
 
-          {/* City / State / Zip in one row */}
-          <div className="md:col-span-2 grid grid-cols-3 gap-4">
+          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <Label htmlFor="city" className={labelClass}>
                 City
@@ -170,10 +165,12 @@ export default function PersonalInformationPage() {
           </div>
         </div>
 
-        {/* Update Now Button */}
         {editable && (
           <div className="mt-6 flex justify-center">
-            <Button type="submit" className="bg-[#4B1E2F] hover:bg-[#3A1624]">
+            <Button
+              type="submit"
+              className="bg-[#4B1E2F] hover:bg-[#3A1624] w-full sm:w-auto"
+            >
               Update Now
             </Button>
           </div>
