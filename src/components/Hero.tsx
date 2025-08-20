@@ -366,7 +366,7 @@ const Hero = () => {
       </div>
 
       {/* Stats Box */}
-      <div className="mt-8 md:mt-0 md:absolute md:left-1/2 md:-translate-x-1/2 md:bottom-[-70px] w-full md:w-[85%] lg:w-[70%] animate-fade-in delay-500">
+      <div className="mt-8 md:mt-0 md:absolute md:left-1/2 md:-translate-x-1/2 md:bottom-[-70px] w-full container animate-fade-in delay-500">
         <div className="bg-[#FFFFFF] rounded-xl shadow-[0px_4px_8px_0px_#00000040]">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-[137px] py-6 px-6 sm:px-10 lg:px-20 text-center">
             <div>
