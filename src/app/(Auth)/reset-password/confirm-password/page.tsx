@@ -1,25 +1,12 @@
-'use client'
-import AuthForm from '../../_components/AuthForm'
+import React from 'react'
+import ConfirmPassword from './_components/ConfirmPassword'
 
-export default function ResetPasswordPage() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleReset = (data: any) => {
-    console.log('Reset Password Data:', data)
-  }
-
+const page = () => {
   return (
-    <AuthForm
-      title="Reset Password"
-      submitText="Confirm"
-      onSubmit={handleReset}
-      fields={[
-        { name: 'password', label: 'Password', type: 'password' },
-        {
-          name: 'confirmPassword',
-          label: 'Confirm Password',
-          type: 'password',
-        },
-      ]}
-    />
+    <div className='border h-screen flex items-center justify-center'>
+      <ConfirmPassword />
+    </div>
   )
 }
+
+export default page
