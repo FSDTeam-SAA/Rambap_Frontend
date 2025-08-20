@@ -1,18 +1,31 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import heroIMage from '../public/heroImage.jpg'
+import heroIMage from '../public/heroImage.jpg';
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
     <section className="bg-[#4B1E2F] relative mb-32 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.40 }}
+            className="space-y-6"
+          >
             <div className="flex">
-              <p className="bg-[#DBCBB91A] py-1 px-4 rounded-xl text-[14px] font-normal">Trusted by 10,000+ clients and lenders</p>
+              <p className="bg-[#DBCBB91A] py-1 px-4 rounded-xl text-[14px] font-normal">
+                Trusted by 10,000+ clients and lenders
+              </p>
             </div>
-            <h1 className="text-4xl md:text-5xl  leading-[150px] text-[60px] font-semibold">
-              Revolutionizing <span className="text-[#DBCBB9]">Lending</span> <span className="text-[#DBCBB9]">Solutions  </span>
+            <h1 className="text-4xl md:text-5xl leading-[150px] text-[60px] font-semibold">
+              Revolutionizing <span className="text-[#DBCBB9]">Lending</span>{" "}
+              <span className="text-[#DBCBB9]">Solutions</span>
             </h1>
             <p className="text-lg md:text-xl opacity-90">
               Transform your lending experience with our innovative financial solutions designed to meet your specific needs and unlock new opportunities.
@@ -23,8 +36,15 @@ const Hero = () => {
             >
               Get Started Today <ArrowRight />
             </Button>
-          </div>
-          <div className="relative w-[644px] h-[492px] ">
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.40, delay: 0.3 }}
+            className="relative w-[644px] h-[492px]"
+          >
             <Image
               src={heroIMage}
               alt="rambap"
@@ -32,12 +52,17 @@ const Hero = () => {
               width={900}
               height={900}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Stats Box */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-[-60px] w-full container">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.50, delay: 0.6 }}
+        className="absolute left-1/2 -translate-x-1/2 bottom-[-60px] w-full container"
+      >
         <div className="bg-[#FFFFFF] rounded-xl shadow-[0px_4px_8px_0px_#00000040]">
           <div className="flex py-[34px] px-[100px] divide-x gap-[137px] divide-gray-300 text-center justify-center">
             <div className="px-8">
@@ -64,9 +89,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
-
   );
 };
 
